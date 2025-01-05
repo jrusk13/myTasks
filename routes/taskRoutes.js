@@ -2,26 +2,22 @@ const express = require('express');
 const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const {
-    getAllPosts,
-    getSinglePost,
-    createPost,
-    updatePost,
-    deletePost
+    listAllTasks,
+    addTask,
+    renderAddTask,
 } = require('../controllers/taskController');
 
 // Get all posts
-router.get('/', getAllPosts);
+router.get('/', listAllTasks);
 
-// Get single post
-router.get('/:id', getSinglePost);
-
-// Create new post
-router.post('/', createPost);
+// Creating a new post
+router.get('/createTask', renderAddTask)
+router.post('/tasks', addTask);
 
 // Update post
-router.put('/:id', updatePost);
+// router.put('/:id', updatePost);
 
 // Delete post
-router.delete('/:id', deletePost);
+// router.delete('/:id', deletePost);
 
 module.exports = router;
