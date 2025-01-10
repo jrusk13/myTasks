@@ -8,6 +8,11 @@ const taskFile = path.join(__dirname, '..', 'data', 'tasks.json');
 // Get the task file
 const getTasks = () => JSON.parse(fs.readFileSync(taskFile, 'utf-8'));
 
+// Get task by id
+const getTaskById = (id) => {
+
+};
+
 // Create a new task
 const createTask = (task) => {
     const tasks = getTasks();
@@ -28,4 +33,20 @@ const createTask = (task) => {
     return task;
 };
 
-module.exports = { getTasks, createTask };
+// Edit a task
+const editTask = (id) => {
+
+};
+
+// Delete a task
+const deleteTask = (id) => {
+
+};
+
+module.exports = { 
+    getTasks,
+    getTaskById, 
+    createTask,
+    editTask,
+    deleteTask 
+};
