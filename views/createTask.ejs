@@ -9,48 +9,27 @@
           </div>
           <div>
             <label for="jobName">Job Name</label>
-            <input
-              type="text"
-            
-              name="jobName"
-              id="jobName"
-            />
+            <select name="jobName" id="jobName">
+              <% jobs.forEach(job => { %>
+                <option value="<%= job.name %>"><%= job.name %></option>
+              <% }); %>
+            </select>
           </div>
           <div>
             <label for="jobNumber">Job Number</label>
-            <input
-              type="text"
-            
-              name="jobNumber"
-              id="jobNumber"
-            />
+            <input type="text" name="jobNumber" id="jobNumber" />
           </div>
           <div>
             <label for="jobPanel">Job Panel</label>
-            <input
-              type="text"
-            
-              name="jobPanel"
-              id="jobPanel"
-            />
+            <input type="text" name="jobPanel" id="jobPanel" />
           </div>
           <div>
             <label for="jobTask">Job Task</label>
-            <input
-              type="text"
-            
-              name="jobTask"
-              id="jobTask"
-            />
+            <input type="text" name="jobTask" id="jobTask" />
           </div>
           <div>
             <label for="notes">Notes</label>
-            <input
-              type="dropdown"
-            
-              name="notes"
-              id="notes"
-            />
+            <input type="dropdown" name="notes" id="notes" />
           </div>
           <div>
             <label for="completed">Completed</label>
@@ -62,20 +41,15 @@
           </div>
           <div>
             <label for="dueDate">Due Date</label>
-            <input
-              type="date"
-            
-              name="dueDate"
-              id="dueDate"
-            />
+            <input type="date" name="dueDate" id="dueDate" />
           </div>
           <div class="formSubmissionLinks">
             <input type="submit" value="Create task" />
             <a href="/">Cancel</a>
-          </div>    
+          </div>
         </div>
       </form>
     </div>
   </main>
   <%- include('./partials/footer.ejs'); %>
-</body>
+    </body>

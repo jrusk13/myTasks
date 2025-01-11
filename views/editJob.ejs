@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs'); %>
+  <main>
+    <div class="container">
+      <form action="/jobs/edit/<%= job.id %>" method="POST">
+        <div class="form-group">
+          <div>
+            <label for="client">Client</label>
+            <input type="text" name="client" id="client" value="<%= job.client %>"/>
+          </div>
+          <div>
+            <label for="jobName">Job Name</label>
+            <input type="text" name="jobName" id="jobName" value="<%= job.name %>"/>
+          </div>
+          <div>
+            <label for="jobNumber">Mail Date</label>
+            <input type="date" name="jobNumber" id="jobNumber" value="<%= job.mailDate %>"/>
+          </div>
+          <div class="formSubmissionLinks">
+            <input type="submit" value="Update job" />
+            <a href="/">Cancel</a>
+          </div>    
+        </div>
+      </form>
+    </div>
+  </main>
+  <%- include('./partials/footer.ejs'); %>
+</body>

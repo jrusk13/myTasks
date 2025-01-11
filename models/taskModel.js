@@ -27,8 +27,8 @@ const createTask = (task) => {
     task.notes = task.notes || null;
     task.completed = task.completed;
     task.dueDate = task.dueDate || null;
-    task.createdAt = new Date().toISOString();
-    task.updatedAt = new Date().toISOString();
+    task.createdAt = new Date().toDateString();
+    task.updatedAt = new Date().toDateString();
 
     tasks.push(task);
     fs.writeFileSync(taskFile, JSON.stringify(tasks, null, 2));
@@ -47,7 +47,7 @@ const editTask = (id, updatedTask) => {
     tasks[index] = {
         ...tasks[index],
         ...updatedTask,
-        updatedAt: new Date().toISOString()
+        updatedAt: new Date().toDateString()
     };
 
     fs.writeFileSync(taskFile, JSON.stringify(tasks, null, 2));

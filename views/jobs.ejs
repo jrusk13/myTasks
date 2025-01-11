@@ -1,0 +1,29 @@
+<%- include('./partials/header.ejs'); %>
+  </header>
+  
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Job Name</th>
+          <th>Mail Date</th>
+          <th>Update Job</th>
+          <th>Delete Job</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% jobs.forEach(job => { %>
+        <tr>
+          <td><%= job.client %><br /></td>
+          <td><%= job.name %><br /></td>
+          <td><%= job.mailDate %><br /></td>
+          <td><a href="/jobs/edit/<%= job.id %>">Update</a></td>
+          <td><a href="/jobs/delete/<%= job.id %>">Delete</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+<%- include('./partials/footer.ejs'); %>
