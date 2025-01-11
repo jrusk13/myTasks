@@ -1,0 +1,68 @@
+<%- include('./partials/header.ejs'); %>
+  <main>
+    <div class="container">
+      <form action="/tasks/edit/<%= task.id %>" method="POST">
+        <div class="form-group">
+          <div>
+            <label for="client">Client</label>
+            <input type="text" name="client" id="client" value="<%= task.client %>"/>
+          </div>
+          <div>
+            <label for="jobName">Job Name</label>
+            <input type="text" name="jobName" id="jobName" value="<%= task.jobName %>"/>
+          </div>
+          <div>
+            <label for="jobNumber">Job Number</label>
+            <input type="text" name="jobNumber" id="jobNumber" value="<%= task.jobNumber %>"/>
+          </div>
+          <div>
+            <label for="jobPanel">Job Panel</label>
+            <input type="text" name="jobPanel" id="jobPanel" value="<%= task.jobPanel %>"/>
+          </div>
+          <div>
+            <label for="jobTask">Job Task</label>
+            <input type="text" name="jobTask" id="jobTask" value="<%= task.jobTask %>"/>
+          </div>
+          <div>
+            <label for="notes">Notes</label>
+            <input type="dropdown" name="notes" id="notes" value="<%= task.notes %>"/>
+          </div>
+          <div>
+            <label for="completed">Completed</label>
+            <select name="completed" id="completed">
+              <option value="<%= task.completed %>">
+                <% if (task.completed === 'True') { %>
+                  Yes
+                <% } else { %>
+                  No
+                <%}%>
+              </option>
+              <option 
+                value="
+                  <% if (task.completed === 'True') { %>
+                    False
+                  <% } else { %>
+                    True
+                  <%}%>">
+                  <% if (task.completed === 'True') { %>
+                    No
+                  <% } else { %>
+                    Yes
+                  <%}%>
+                </option>
+            </select>
+          </div>
+          <div>
+            <label for="dueDate">Due Date</label>
+            <input type="date" name="dueDate" id="dueDate" value="<%= task.dueDate %>"/>
+          </div>
+          <div class="formSubmissionLinks">
+            <input type="submit" value="Update task" />
+            <a href="/">Cancel</a>
+          </div>    
+        </div>
+      </form>
+    </div>
+  </main>
+  <%- include('./partials/footer.ejs'); %>
+</body>

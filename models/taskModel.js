@@ -7,10 +7,12 @@ const taskFile = path.join(__dirname, '..', 'data', 'tasks.json');
 
 // Get the task file
 const getTasks = () => JSON.parse(fs.readFileSync(taskFile, 'utf-8'));
+const getTaskIndex = (id) => getTasks().findIndex(task => task.id === id);
 
 // Get task by id
 const getTaskById = (id) => {
-
+    const tasks = getTasks();
+    return tasks.find(task => task.id === id);
 };
 
 // Create a new task
@@ -34,13 +36,35 @@ const createTask = (task) => {
 };
 
 // Edit a task
-const editTask = (id) => {
+const editTask = (id, updatedTask) => {
+    const tasks = getTasks();
+    const index = getTaskIndex(id);
 
+    if (index === -1) {
+        throw new Error(`Task with ID ${id} not found.`);
+    };
+
+    tasks[index] = {
+        ...tasks[index],
+        ...updatedTask,
+        updatedAt: new Date().toISOString()
+    };
+
+    fs.writeFileSync(taskFile, JSON.stringify(tasks, null, 2));
+    return tasks[index];
 };
 
 // Delete a task
 const deleteTask = (id) => {
+    const tasks = getTasks();
+    const index = getTaskIndex(id);
 
+    if (index === -1) {
+        throw new Error(`Task with ID ${id} not found.`);
+    };
+
+    tasks.splice(index, 1);
+    fs.writeFileSync(taskFile, JSON.stringify(tasks, null, 2));
 };
 
 module.exports = { 
