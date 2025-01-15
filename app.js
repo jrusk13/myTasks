@@ -3,7 +3,8 @@ const app = express();
 const path = require("path");
 
 // Import routes
-const taskRoutes = require("./routes/taskRoutes");
+const taskRouter = require("./routes/taskRoutes");
+const jobRouter = require("./routes/jobRoutes");
 
 // Use middleware
 app.use(express.json());
@@ -13,7 +14,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Routes
-app.use("/", taskRoutes);
+app.use("/", taskRouter);
+app.use("/", jobRouter);
 
 const PORT = 3000;
 app.listen(PORT, () =>

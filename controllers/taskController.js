@@ -3,8 +3,8 @@ const router = express.Router();
 
 const { v4: uuidv4 } = require('uuid');
 const { 
-    getTasks,
-    getTaskById, 
+    getTasks, 
+    getTaskById,
     createTask,
     editTask,
     deleteTask
@@ -52,7 +52,36 @@ const addTask = (req, res) => {
     res.redirect('/');
 };
 
+// Manage task
+const manageTask = (req, res) => {
+    const id = req.params.id;
+    const task = getTaskById(id);
+    res.render('editTask', { task });
+};
+
+// Update a task
+const updateTask = (req, res) => {
+    const id = req.params.id;
+    const updatedTask = req.body;
+
+    editTask(id, updatedTask);
+
+    res.redirect('/');
+}
+
+// Delete a task
+const removeTask = (req, res) => {
+    const id = req.params.id;
+    
+    deleteTask(id);
+
+    res.redirect('/');
+}
+
 module.exports = {
     listAllTasks,
-    addTask
+    addTask,
+    manageTask,
+    updateTask,
+    removeTask
 };

@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs'); %>
+  <main>
+    <div class="container">
+      <form action="/jobs/new" method="post">
+        <div class="form-group">
+          <div>
+            <label for="client">Client</label>
+            <input type="text" name="client" id="client" />
+          </div>
+          <div>
+            <label for="name">Job Name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div>
+            <label for="mailDate">Mail Date</label>
+            <input type="date" name="mailDate" id="mailDate" />
+          </div>
+          <div class="formSubmissionLinks">
+            <input type="submit" value="Create task" />
+            <a href="/">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <%- include('./partials/footer.ejs'); %>
+    </body>

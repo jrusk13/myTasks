@@ -1,0 +1,18 @@
+[
+  {
+    "client": "WCS",
+    "name": "Spring Newsletter",
+    "mailDate": "2025-01-14",
+    "id": "1a6d056b-812b-40be-a1e1-42dca3c85418",
+    "createdAt": "Fri Jan 10 2025",
+    "updatedAt": "Fri Jan 10 2025"
+  },
+  {
+    "client": "AIUSA",
+    "name": "November Newsletter",
+    "mailDate": "2025-11-15",
+    "id": "c20c146a-6841-41e3-8aee-179f7a51c67a",
+    "createdAt": "Fri Jan 10 2025",
+    "updatedAt": "Fri Jan 10 2025"
+  }
+]

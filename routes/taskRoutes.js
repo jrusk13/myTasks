@@ -1,22 +1,31 @@
 const express = require('express');
-const router = express.Router();
+const taskRouter = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const {
     listAllTasks,
-    addTask
+    addTask,
+    manageTask,
+    updateTask,
+    removeTask,
 } = require('../controllers/taskController');
+const {
+    getJobs
+} = require('../models/jobModel');
 
-// Get all posts
-router.get('/', listAllTasks);
+const jobs = getJobs();
 
-// Creating a new post
-router.get('/tasks/new', (req, res) => res.render('createTask'))
-router.post('/tasks/new', addTask);
+// Get all tasks
+taskRouter.get('/', listAllTasks);
 
-// Update post
-// router.put('/:id', updatePost);
+// Creating a new task
+taskRouter.get('/tasks/new', (req, res) => res.render('createTask', { jobs }))
+taskRouter.post('/tasks/new', addTask);
+
+// Update task
+taskRouter.get('/tasks/edit/:id', manageTask);
+taskRouter.post('/tasks/edit/:id', updateTask);
 
 // Delete post
-// router.delete('/:id', deletePost);
+taskRouter.get('/tasks/delete/:id', removeTask);
 
-module.exports = router;
+module.exports = taskRouter;
