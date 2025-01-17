@@ -8,11 +8,13 @@
     "updatedAt": "Fri Jan 10 2025"
   },
   {
-    "client": "AIUSA",
+    "client": "WCS",
     "name": "November Newsletter",
     "mailDate": "2025-11-15",
     "id": "c20c146a-6841-41e3-8aee-179f7a51c67a",
     "createdAt": "Fri Jan 10 2025",
-    "updatedAt": "Fri Jan 10 2025"
+    "updatedAt": "Sun Jan 12 2025",
+    "jobName": "November Newsletter",
+    "jobNumber": "2025-11-15"
   }
 ]

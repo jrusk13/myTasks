@@ -1,54 +1,54 @@
 <%- include('./partials/header.ejs'); %>
   <main>
-    <div class="container">
-      <form action="/tasks/new" method="post">
-        <div class="form-group">
+    <div class="container mb-3">
+      <div class="form-group">
+        <form action="/tasks/new" method="post">
           <div>
-            <label for="client">Client</label>
-            <input type="text" name="client" id="client" />
+            <label class="form-control-label" for="client">Client</label>
+            <input class="form-control" type="text" name="client" id="client" />
           </div>
           <div>
-            <label for="jobName">Job Name</label>
-            <select name="jobName" id="jobName">
+            <label class="form-control-label" for="jobName">Job Name</label>
+            <select class="custom-select" name="jobName" id="jobName">
               <% jobs.forEach(job => { %>
                 <option value="<%= job.name %>"><%= job.name %></option>
               <% }); %>
             </select>
           </div>
           <div>
-            <label for="jobNumber">Job Number</label>
-            <input type="text" name="jobNumber" id="jobNumber" />
+            <label class="form-control-label" for="jobNumber">Job Number</label>
+            <input class="form-control" type="text" name="jobNumber" id="jobNumber" />
           </div>
           <div>
-            <label for="jobPanel">Job Panel</label>
-            <input type="text" name="jobPanel" id="jobPanel" />
+            <label class="form-control-label" for="jobPanel">Job Panel</label>
+            <input class="form-control" type="text" name="jobPanel" id="jobPanel" />
           </div>
           <div>
-            <label for="jobTask">Job Task</label>
-            <input type="text" name="jobTask" id="jobTask" />
+            <label class="form-control-label" for="jobTask">Job Task</label>
+            <input class="form-control" type="text" name="jobTask" id="jobTask" />
           </div>
           <div>
-            <label for="notes">Notes</label>
-            <input type="dropdown" name="notes" id="notes" />
+            <label class="form-control-label" for="notes">Notes</label>
+            <input class="form-control" type="text" name="notes" id="notes" />
           </div>
           <div>
-            <label for="completed">Completed</label>
-            <select name="completed" id="completed">
+            <label class="form-control-label" for="completed">Completed</label>
+            <select class="custom-select" name="completed" id="completed">
               <option value="">Select Yes or No</option>
               <option value="True">Yes</option>
               <option value="False">No</option>
             </select>
           </div>
           <div>
-            <label for="dueDate">Due Date</label>
-            <input type="date" name="dueDate" id="dueDate" />
+            <label class="form-control-label" for="dueDate">Due Date</label>
+            <input class="form-control" type="date" name="dueDate" id="dueDate" />
           </div>
           <div class="formSubmissionLinks">
             <input type="submit" value="Create task" />
             <a href="/">Cancel</a>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </main>
   <%- include('./partials/footer.ejs'); %>

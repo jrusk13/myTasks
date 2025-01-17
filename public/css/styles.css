@@ -1,0 +1,76 @@
+/* Customize nav-pills */
+.nav-pills .nav-link {
+background-color: #f0f0f0;
+/* Light gray for unselected pills */
+color: #007bff;
+/* Bootstrap primary blue for text */
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin: 5px;
+font-size: 15pt;
+}
+
+.nav-pills .nav-link:hover {
+box-shadow: 0px 0px 15px 0px black;
+/* Slightly darker gray on hover */
+
+}
+
+.nav-pills .nav-link.active {
+background-color: #007bff;
+/* Bootstrap primary blue for active pill */
+color: #fff;
+/* White text for active pill */
+}
+
+.navbar-brand {
+color: #fff;
+font-size: 30pt;
+}
+
+.navbar-brand:hover {
+color: #fff;
+}
+
+.createNewLink a {
+    text-decoration: none;
+    display: inline-block;
+    align-items:flex-start;
+    background-color:#007bff;
+    margin: 5px;
+    color: #fff;
+    padding:5px;
+    border-radius: 7px;
+}
+
+thead tr th {
+    padding: 5px;
+    min-width:max-content;
+    max-height:min-content;
+    text-wrap: nowrap;
+}
+
+.form-control-label {
+    margin: 10px;
+    margin-left: 3px;
+    padding: auto;
+    font-size: 16pt;
+}
+
+.form-group {
+    width: 80%;
+    margin:auto;
+}
+
+.formSubmissionLinks {
+    margin: 10px auto;
+    margin-top: 15px;
+    padding:5px;
+}
+
+.formSubmissionLinks a, .formSubmissionLinks input {
+    margin-right: 15px;
+    font-size: 16pt;
+}

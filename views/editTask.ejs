@@ -1,6 +1,6 @@
 <%- include('./partials/header.ejs'); %>
-  <main>
-    <div class="container">
+</header>
+    <div class="container-fluid">
       <form action="/tasks/edit/<%= task.id %>" method="POST">
         <div class="form-group">
           <div>
@@ -63,6 +63,5 @@
         </div>
       </form>
     </div>
-  </main>
   <%- include('./partials/footer.ejs'); %>
 </body>

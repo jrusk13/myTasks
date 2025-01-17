@@ -24,7 +24,7 @@ const listAllJobs = (req, res) => {
 // Create a task
 const addJob = (req, res) => {
     if (!req.body.name) {
-        return res.redirect('/');
+        return res.redirect('/jobs');
     }
     
     const { 
@@ -39,7 +39,7 @@ const addJob = (req, res) => {
         mailDate
     });
 
-    res.redirect('/');
+    res.redirect('/jobs');
 };
 
 // Manage job
@@ -56,7 +56,7 @@ const updateJob = (req, res) => {
 
     editJob(id, updatedJob);
 
-    res.redirect('/');
+    res.redirect('/jobs');
 }
 
 // Delete a job
@@ -65,7 +65,7 @@ const removeJob = (req, res) => {
     
     deleteJob(id);
 
-    res.redirect('/');
+    res.redirect('/jobs');
 }
 
 module.exports = {
